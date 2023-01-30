@@ -20,7 +20,7 @@ export default function ViewRepairRequestsArchive() {
 
     return (
         <div className="container">
-            <b>Архив</b>
+            <p className="display-6">Архив</p>
             <div className="py-4">
                 <div className="card">
                     <table className="table table-striped table-borderless table-hover">
@@ -44,7 +44,7 @@ export default function ViewRepairRequestsArchive() {
                                         <td>{request.carLicensePlateNumber}</td>
                                         <td>{request.carOwnerName}</td>
                                         <td>
-                                            <Link className="btn btn-primary mx-2" to={`/view-archive-repair-request/${request.id}`}>Детали</Link>
+                                            <Link className="btn btn-outline-primary mx-2" to={`/view-archive-repair-request/${request.id}`}>Детали</Link>
                                         </td>
                                     </tr>
                                 ))

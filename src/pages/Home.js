@@ -25,7 +25,7 @@ export default function Home() {
 
     return (
         <div className="container">
-            <b>Текущие заявки</b>
+            <p className="display-6">Текущие заявки</p>
             <div className="py-4">
                 <div className="card">
                     <table className="table table-striped table-borderless table-hover">
@@ -49,7 +49,7 @@ export default function Home() {
                                         <td>{request.carLicensePlateNumber}</td>
                                         <td>{request.carOwnerName}</td>
                                         <td>
-                                            <Link className="btn btn-primary mx-2" to={`/view-repair-request/${request.id}`}>Детали</Link>
+                                            <Link className="btn btn-outline-primary mx-2" to={`/view-repair-request/${request.id}`}>Детали</Link>
                                             <Link className="btn btn-warning mx-2" to={`/edit-repair-request/${request.id}`}>Изменить</Link>
                                             <button className="btn btn-outline-danger mx-2" onClick={() => deleteRequest(request.id)}>Отменить</button>
                                         </td>
