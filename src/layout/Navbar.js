@@ -19,7 +19,7 @@ export default function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div>
-                        <Link className="btn btn-primary mx-2" to="/archive">Архив</Link>
+                        <Link className="btn btn-outline-primary mx-2" to="/archive">Архив</Link>
                         <Link className="btn btn-success" to="/add-request">Добавить новую заявку</Link>
                     </div>
                 </div>
