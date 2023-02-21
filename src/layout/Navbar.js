@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Navbar() {
   return (
     <div className="m-2">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
+      <nav className="navbar sticky-bottom navbar-expand-lg navbar-dark bg-dark rounded-3 m-1 sticky-top">
         <div className="container-fluid my-1">
           <Link className="navbar-brand mx-2" to={"/"}>Автосервис "Всегда на колесах"</Link>
           <button

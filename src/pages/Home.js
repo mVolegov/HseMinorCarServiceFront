@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <div className="container">
       <ToastContainer />
-      <Link className="btn btn-lg btn-success my-3" to="/add-request">Добавить новую заявку</Link>
+      <Link className="btn btn-lg btn-success my-3" to="/add-request">+ Добавить новую заявку</Link>
 
       <p className="text-start h4 mb-2">Текущие заявки</p>
       <div>
@@ -90,7 +90,6 @@ export default function Home() {
                     </td>
                     <td>
                       <Link className="btn btn-outline-success" onClick={() => setDoneRequest(request.id)}>Выполнено</Link>
-                      {/* <Link className="btn btn-success mx-2" to={`/view-repair-request/${request.id}`}>Выполнено</Link> */}
                     </td>
                   </tr>
                 ))
