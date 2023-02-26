@@ -85,7 +85,7 @@ export default function Home() {
                     <td>{request.carOwnerName}</td>
                     <td>
                       <Link className="btn btn-info mx-2" to={`/view-repair-request/${request.id}`}>Детали</Link>
-                      <Link className="btn btn-outline-primary mx-2" to={`/edit-repair-request/${request.id}`}>Изменить</Link>
+                      <Link className="btn btn-outline-warning mx-2" to={`/edit-repair-request/${request.id}`}>Изменить</Link>
                       <button className="btn btn-outline-danger mx-2" onClick={() => deleteRequest(request.id)}>Отменить</button>
                     </td>
                     <td>
