@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 export default function ViewRepairRequest() {
-
+  
   const [repairRequest, setRepairRequest] = useState({
     carOwnerName: "",
     carOwnerContactInfo: "",
@@ -15,19 +15,21 @@ export default function ViewRepairRequest() {
     appealReason: "",
     declaredWorks: "",
     totalPriceOfWorks: 0,
-    status: ""
-  })
+    status: "",
+  });
 
-  const { id } = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
-    loadRepairRequest()
-  }, [])
+    loadRepairRequest();
+  }, []);
 
   const loadRepairRequest = async () => {
-    const result = await axios.get(`http://localhost:8080/car-service/requests/${id}`)
-    setRepairRequest(result.data)
-  }
+    const result = await axios.get(
+      `http://localhost:8080/car-service/requests/${id}`
+    );
+    setRepairRequest(result.data);
+  };
 
   return (
     <div className="container">
@@ -37,16 +39,38 @@ export default function ViewRepairRequest() {
         <div className="col-md-8">
           <fieldset disabled>
             <div>
-              <label for="appealReason" className="form-label"><strong>Прчина обращения</strong></label>
-              <textarea type="text" id="appealReason" className="form-control" value={repairRequest.appealReason}></textarea>
+              <label for="appealReason" className="form-label">
+                <strong>Прчина обращения</strong>
+              </label>
+              <textarea
+                type="text"
+                id="appealReason"
+                className="form-control"
+                value={repairRequest.appealReason}
+              ></textarea>
             </div>
             <div>
-              <label for="declaredWorks" className="form-label"><strong>Заявленные работы</strong></label>
-              <textarea type="text" id="declaredWorks" rows="15" className="form-control" value={repairRequest.declaredWorks}></textarea>
+              <label for="declaredWorks" className="form-label">
+                <strong>Заявленные работы</strong>
+              </label>
+              <textarea
+                type="text"
+                id="declaredWorks"
+                rows="15"
+                className="form-control"
+                value={repairRequest.declaredWorks}
+              ></textarea>
             </div>
             <div>
-              <label for="totalPriceOfWorks" className="form-label"><strong>Общая стоимость работ (.руб)</strong></label>
-              <input type="text" id="totalPriceOfWorks" className="form-control" value={repairRequest.totalPriceOfWorks}></input>
+              <label for="totalPriceOfWorks" className="form-label">
+                <strong>Общая стоимость работ (.руб)</strong>
+              </label>
+              <input
+                type="text"
+                id="totalPriceOfWorks"
+                className="form-control"
+                value={repairRequest.totalPriceOfWorks}
+              ></input>
             </div>
           </fieldset>
         </div>
@@ -87,7 +111,9 @@ export default function ViewRepairRequest() {
         </div>
       </div>
 
-      <Link className="btn btn-primary my-2" to={"/"}>Назад на главную</Link>
+      <Link className="btn btn-primary my-2" to={"/"}>
+        Назад на главную
+      </Link>
     </div>
-  )
+  );
 }

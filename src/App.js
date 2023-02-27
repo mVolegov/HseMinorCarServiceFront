@@ -1,15 +1,15 @@
-import './App.css';
+import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './layout/Navbar';
-import Home from './pages/Home';
-import AddRepairRequest from './repair_requests/AddRepairRequest';
-import AddRepairRequestFormik from './repair_requests/AddRepairRequestFormik';
-import EditRepairRequest from './repair_requests/EditRepairRequest';
-import ViewRepairRequest from './repair_requests/ViewRepairRequest';
-import ViewRepairRequestsArchive from './repair_requests_archieved/ViewRepairRequestsArchive';
-import ViewDetailsRepairRequestArchive from './repair_requests_archieved/ViewDetailsRepairRequestArchive';
-import HandBook from './handbook/HandBook';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./layout/Navbar";
+import Home from "./pages/Home";
+import AddRepairRequest from "./repair_requests/AddRepairRequest";
+import AddRepairRequestFormik from "./repair_requests/AddRepairRequestFormik";
+import EditRepairRequest from "./repair_requests/EditRepairRequest";
+import ViewRepairRequest from "./repair_requests/ViewRepairRequest";
+import ViewRepairRequestsArchive from "./repair_requests_archieved/ViewRepairRequestsArchive";
+import ViewDetailsRepairRequestArchive from "./repair_requests_archieved/ViewDetailsRepairRequestArchive";
+import HandBook from "./handbook/HandBook";
 
 function App() {
   return (
@@ -19,11 +19,31 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           {/* <Route exact path="/add-request" element={<AddRepairRequest />} /> */}
-          <Route exact path="/add-request" element={<AddRepairRequestFormik />} />
-          <Route exact path="/edit-repair-request/:id" element={<EditRepairRequest />} />
-          <Route exact path="/view-repair-request/:id" element={<ViewRepairRequest />} />
-          <Route exact path="/archive" element={<ViewRepairRequestsArchive />} />
-          <Route exact path="/view-archive-repair-request/:id" element={<ViewDetailsRepairRequestArchive />} />
+          <Route
+            exact
+            path="/add-request"
+            element={<AddRepairRequestFormik />}
+          />
+          <Route
+            exact
+            path="/edit-repair-request/:id"
+            element={<EditRepairRequest />}
+          />
+          <Route
+            exact
+            path="/view-repair-request/:id"
+            element={<ViewRepairRequest />}
+          />
+          <Route
+            exact
+            path="/archive"
+            element={<ViewRepairRequestsArchive />}
+          />
+          <Route
+            exact
+            path="/view-archive-repair-request/:id"
+            element={<ViewDetailsRepairRequestArchive />}
+          />
           <Route exact path="/handbook" element={<HandBook />} />
         </Routes>
       </Router>
