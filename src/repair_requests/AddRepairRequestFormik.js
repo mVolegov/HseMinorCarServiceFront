@@ -27,6 +27,7 @@ export default function AddRepairRequestFormik() {
         appealReason: "",
         declaredWorks: "",
         totalPriceOfWorks: 0,
+        createdDate: null
       },
       validationSchema: repairRequestSchema,
       onSubmit,
@@ -49,7 +50,7 @@ export default function AddRepairRequestFormik() {
   return (
     <div className="container">
       <h5 className="text-center m-4">Создание заявки</h5>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="row g-3">
           <div className="col-sm-8">
@@ -287,10 +288,10 @@ export default function AddRepairRequestFormik() {
                 )}
               </div>
 
-              <div>
+              <div className="mb-5">
                 <button
                   type="submit"
-                  className="btn btn-outline-success mt-2"
+                  className="btn btn-outline-success mt-2 mt-2"
                   onClick={notify}
                 >
                   Создать

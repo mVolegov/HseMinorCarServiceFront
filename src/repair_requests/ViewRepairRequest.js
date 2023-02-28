@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export default function ViewRepairRequest() {
-  
   const [repairRequest, setRepairRequest] = useState({
     carOwnerName: "",
     carOwnerContactInfo: "",
@@ -16,7 +15,17 @@ export default function ViewRepairRequest() {
     declaredWorks: "",
     totalPriceOfWorks: 0,
     status: "",
+    createdDate: null,
   });
+
+  const dateOptions = {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    weekday: "long",
+    hour: "numeric",
+    minute: "numeric",
+  };
 
   const { id } = useParams();
 
@@ -34,7 +43,14 @@ export default function ViewRepairRequest() {
   return (
     <div className="container">
       <div className="row m-3">
+        <p className="text-start h4 mb-2">Заявка под ID: {repairRequest.id}</p>
         <p className="text-start h4 mb-2">Статус: {repairRequest.status}</p>
+        <p className="text-start h4 mb-4">
+          Дата создания:{" "}
+          {Intl.DateTimeFormat("ru", dateOptions).format(
+            new Date(repairRequest.createdDate)
+          )}
+        </p>
 
         <div className="col-md-8">
           <fieldset disabled>
@@ -87,6 +103,8 @@ export default function ViewRepairRequest() {
               </li>
             </ul>
           </label>
+
+          <br></br>
 
           <label className="form-label">
             <strong>Данные ТС</strong>

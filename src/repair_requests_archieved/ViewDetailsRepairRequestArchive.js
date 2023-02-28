@@ -16,7 +16,8 @@ export default function ViewDetailsRepairRequestArchive() {
     declaredWorks: "",
     totalPriceOfWorks: 0,
     status: "",
-    completedDate: 0
+    createdDate: 0,
+    completedDate: 0,
   });
 
   const { id } = useParams();
@@ -27,8 +28,8 @@ export default function ViewDetailsRepairRequestArchive() {
     year: "numeric",
     weekday: "long",
     hour: "numeric",
-    minute: "numeric"
-  }
+    minute: "numeric",
+  };
 
   useEffect(() => {
     loadRepairRequest();
@@ -43,7 +44,7 @@ export default function ViewDetailsRepairRequestArchive() {
 
   return (
     <div className="container">
-      <h5 className="text-center m-4">Архив</h5>
+      <p className="h4 my-3">Архив</p>
 
       <div className="row m-3">
         <p className="text-start h4 mb-2">Заявка под ID: {repairRequest.id}</p>
@@ -51,11 +52,35 @@ export default function ViewDetailsRepairRequestArchive() {
 
         <div className="col-md-8">
           <fieldset disabled>
-            <div>
-              <label for="completedDate" className="form-label">Дата выполнения</label>
-              <input type="text" id="completedDate" className="form-control" value={Intl.DateTimeFormat("ru", dateOptions).format(new Date(repairRequest.completedDate))}>
-              </input>
+            <div className="row g-2 mb-2">
+              <div className="col-md-6">
+                <label for="completedDate" className="form-label">
+                  <strong>Дата создания</strong>
+                </label>
+                <input
+                  type="text"
+                  id="completedDate"
+                  className="form-control"
+                  value={Intl.DateTimeFormat("ru", dateOptions).format(
+                    new Date(repairRequest.createdDate)
+                  )}
+                ></input>
+              </div>
+              <div className="col-md-6">
+                <label for="completedDate" className="form-label">
+                  <strong>Дата выполнения</strong>
+                </label>
+                <input
+                  type="text"
+                  id="completedDate"
+                  className="form-control"
+                  value={Intl.DateTimeFormat("ru", dateOptions).format(
+                    new Date(repairRequest.completedDate)
+                  )}
+                ></input>
+              </div>
             </div>
+
             <div>
               <label for="appealReason" className="form-label">
                 <strong>Прчина обращения</strong>
@@ -105,6 +130,8 @@ export default function ViewDetailsRepairRequestArchive() {
               </li>
             </ul>
           </label>
+
+          <br></br>
 
           <label className="form-label">
             <strong>Данные ТС</strong>
