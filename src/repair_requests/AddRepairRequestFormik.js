@@ -33,8 +33,6 @@ export default function AddRepairRequestFormik() {
       onSubmit,
     });
 
-  console.log(errors);
-
   const notify = () =>
     toast.success("Заявка успешно создана!", {
       position: "bottom-right",
